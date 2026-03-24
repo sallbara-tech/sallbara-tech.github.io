@@ -8,51 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
-        .hero-bg { 
-            background: linear-gradient(135deg, #1e3a8a, #111827); 
-        }
-        /* Style pour la barre de défilement du menu */
-        .sidebar::-webkit-scrollbar { width: 5px; }
-        .sidebar::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+        .hero-bg { background: linear-gradient(135deg, #1e3a8a, #111827); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row">
+<body class="bg-gray-50 text-gray-800">
 
-    <header class="sidebar w-full md:w-72 bg-[#040b14] text-white md:fixed md:top-0 md:left-0 md:h-screen flex flex-col items-center py-10 overflow-y-auto z-50">
-        <div class="mb-6 relative">
-            <img src="photo.jpg" alt="Bara SALL" class="w-32 h-32 rounded-full border-4 border-gray-700 object-cover shadow-lg bg-gray-800">
-        </div>
-        <h1 class="text-2xl font-bold mb-8 text-center">Bara SALL</h1>
-        <nav class="w-full px-6 flex flex-col space-y-2">
-            <a href="#accueil" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-                <i class="fas fa-home w-6 text-center"></i> <span>Accueil</span>
-            </a>
-            <a href="#apropos" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-                <i class="fas fa-user w-6 text-center"></i> <span>À propos</span>
-            </a>
-            <a href="#competences" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-                <i class="fas fa-cogs w-6 text-center"></i> <span>Compétences</span>
-            </a>
-            <a href="#projets" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-                <i class="fas fa-briefcase w-6 text-center"></i> <span>Projets & TP</span>
-            </a>
-            <a href="#contact" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-                <i class="fas fa-envelope w-6 text-center"></i> <span>Contact</span>
-            </a>
-        </nav>
-        <div class="mt-auto pt-8 flex space-x-4">
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-github"></i></a>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#accueil" class="text-2xl font-bold text-blue-900 tracking-wider uppercase">Bara SALL</a>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-600 hover:text-blue-600 font-semibold transition border-b-2 border-transparent hover:border-blue-600 pb-1">Accueil</a>
+                    <a href="#apropos" class="text-gray-600 hover:text-blue-600 font-semibold transition border-b-2 border-transparent hover:border-blue-600 pb-1">À propos</a>
+                    <a href="#competences" class="text-gray-600 hover:text-blue-600 font-semibold transition border-b-2 border-transparent hover:border-blue-600 pb-1">Compétences</a>
+                    <a href="#projets" class="text-gray-600 hover:text-blue-600 font-semibold transition border-b-2 border-transparent hover:border-blue-600 pb-1">Projets & TP</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 font-semibold transition border-b-2 border-transparent hover:border-blue-600 pb-1">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="w-full md:ml-72 flex-1">
+    <main class="w-full">
         
-        <section id="accueil" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white px-4 py-20">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Bara SALL</h1>
+        <section id="accueil" class="hero-bg py-32 flex flex-col items-center justify-center text-center text-white px-4">
+            <img src="photo.jpg" alt="Bara SALL" class="w-40 h-40 rounded-full border-4 border-white object-cover shadow-xl mb-8 bg-gray-800">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Bara SALL</h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">Futur Ingénieur en Distribution Électrique & Énergies Renouvelables</p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#apropos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Découvrir mon profil</a>
+                <a href="#apropos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Découvrir mon profil</a>
                 <a href="cv.pdf" download="CV_Bara_SALL.pdf" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
@@ -64,7 +48,7 @@
                 <h2 class="text-3xl font-bold mb-8 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">À propos de moi</h2>
                 <div class="text-lg text-gray-600 leading-relaxed text-justify space-y-4">
                     <p>Actuellement en Licence 3 de Génie Électrique et Énergies Renouvelables à l'ESTM Dakar, je me passionne pour l'optimisation des systèmes énergétiques et la conception de solutions innovantes. Mon parcours académique me permet de maîtriser l'électronique de puissance, l'analyse des réseaux de distribution et la thermodynamique industrielle.</p>
-                    <p>Au-delà de la théorie, je suis un maker dans l'âme. J'aime concevoir des systèmes embarqués concrets en alliant mécanique, électronique et programmation, tout en intégrant les nouvelles technologies comme l'Intelligence Artificielle pour rendre les systèmes énergétiques plus intelligents et autonomes.</p>
+                    <p>Au-delà de la théorie, je suis un maker dans l'âme. J'aime concevoir des systèmes embarqués concrets en alliant mécanique, électronique et programmation, tout en intégrant les nouvelles technologies pour rendre les systèmes énergétiques plus intelligents et autonomes.</p>
                 </div>
             </div>
         </section>
@@ -73,29 +57,23 @@
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
                 <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Domaines de Compétences</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-solar-panel text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Énergie Solaire & Dimensionnement PV</span>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
+                        <i class="fas fa-solar-panel text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Énergie Solaire & PV</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
                         <i class="fas fa-chart-line text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Audit Énergétique</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-network-wired text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Systèmes Électriques & Réseaux</span>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
+                        <i class="fas fa-network-wired text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Réseaux Électriques</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-industry text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Informatique Industrielle & Automatisme</span>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
+                        <i class="fas fa-industry text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Informatique Industrielle</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-microchip text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Programmation C++ & Arduino</span>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
+                        <i class="fas fa-microchip text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Programmation Arduino (C++)</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Logiciels (Schemaplic, Block load, MATLAB, Zeliosoft)</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-project-diagram text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Gestion de Projet</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
-                        <i class="fas fa-desktop text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Outils Informatiques & Internet</span>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 transition hover:shadow-md">
+                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Logiciels (MATLAB, Schemaplic)</span>
                     </div>
                 </div>
             </div>
@@ -103,52 +81,41 @@
 
         <section id="projets" class="py-20 bg-white">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Expériences & Projets Pratiques</h2>
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Expériences & Projets</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Suiveur Solaire Intelligent</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">Projet de recherche & développement</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                <li>Création d'un prototype de tracker solaire à un axe.</li>
-                                <li>Assemblage mécanique et pilotage par moteur NEMA 23.</li>
-                                <li>Programmation Arduino (C++) pour l'exploitation des capteurs.</li>
-                                <li>Intégration d'un contrôle d'accès avec lecteur RFID et écran LCD.</li>
-                            </ul>
-                        </div>
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow border-t-4 border-blue-600 p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Suiveur Solaire Intelligent</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4">Projet de recherche & développement</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
+                            <li>Création d'un prototype de tracker solaire à un axe.</li>
+                            <li>Assemblage mécanique et pilotage par moteur NEMA 23.</li>
+                            <li>Programmation Arduino pour capteurs et contrôle d'accès RFID.</li>
+                        </ul>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Stage Technicien Électrique</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">CENOA, Dakar | Août 2024 - Septembre 2024</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                <li>Installation de câblages à travers des conduits industriels.</li>
-                                <li>Diagnostic et dépannage d'équipements défectueux.</li>
-                                <li>Application stricte des protocoles de sécurité sur les chantiers.</li>
-                            </ul>
-                        </div>
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow border-t-4 border-blue-600 p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Stage Technicien Électrique</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4">CENOA, Dakar | Août 2024 - Sept. 2024</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
+                            <li>Installation de câblages industriels.</li>
+                            <li>Diagnostic et dépannage d'équipements.</li>
+                            <li>Respect des protocoles de sécurité.</li>
+                        </ul>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Électronique Analogique</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM Dakar</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                <li><strong>Transistors & AOP :</strong> Caractérisation NPN, inverseurs, montages intégrateurs et dérivateurs.</li>
-                                <li><strong>Quadripôles & Filtres :</strong> Matrices d'impédance et diagrammes de Bode.</li>
-                                <li><strong>Diodes :</strong> Détecteurs de crête et décaleurs de tension.</li>
-                            </ul>
-                        </div>
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow border-t-4 border-blue-600 p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Électronique Analogique</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
+                            <li>Caractérisation de transistors NPN et Amplificateurs Opérationnels.</li>
+                            <li>Étude des quadripôles et diagrammes de Bode.</li>
+                        </ul>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Électricité Industrielle</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM Dakar</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                <li><strong>Commande Moteurs :</strong> Schémas de puissance et commande pour démarrage rotorique.</li>
-                                <li><strong>Appareillage :</strong> Dimensionnement de relais thermiques, contacteurs et sectionneurs.</li>
-                                <li><strong>Câblage :</strong> Logique de commande et de protection industrielle.</li>
-                            </ul>
-                        </div>
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow border-t-4 border-blue-600 p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Électricité Industrielle</h3>
+                        <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
+                            <li>Schémas de puissance et commande de moteurs.</li>
+                            <li>Dimensionnement d'appareillages (relais, contacteurs).</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -195,7 +162,7 @@
                             
                             <input type="hidden" name="access_key" value="1ce6f0f1-b2dd-470c-8ace-482f638d8662">
                             
-                            <input type="hidden" name="subject" value="Nouveau message depuis votre Portfolio">
+                            <input type="hidden" name="subject" value="Nouveau message de votre Portfolio">
                             <input type="hidden" name="from_name" value="Bara SALL Portfolio">
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -225,10 +192,11 @@
             </div>
         </section>
 
-        <footer class="bg-gray-900 text-gray-400 text-center py-6">
-            <p>&copy; 2026 Bara SALL. Tous droits réservés.</p>
-        </footer>
-
     </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-auto">
+        <p>&copy; 2026 Bara SALL. Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>
