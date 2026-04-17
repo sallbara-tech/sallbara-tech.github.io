@@ -35,13 +35,9 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        /* Animation pour l'indicateur de défilement (petite souris) */
-        @keyframes scroll {
-            0% { opacity: 1; }
-            100% { opacity: 0; transform: translateY(12px); }
-        }
-        .animate-scroll {
-            animation: scroll 2s cubic-bezier(.15,.41,.69,.94) infinite;
+        /* Style pour le curseur clignotant de Typed.js */
+        .typed-cursor {
+            color: rgba(191, 219, 254, 0.8); /* Couleur text-blue-200 */
         }
     </style>
 </head>
@@ -51,7 +47,7 @@
         <div class="mb-6 relative" data-aos="zoom-in" data-aos-duration="1000">
             <img src="photo.jpg" alt="Bara SALL" class="w-32 h-32 rounded-full border-4 border-blue-500 object-cover shadow-lg bg-gray-800 transition transform hover:scale-105 duration-300">
         </div>
-        <h1 class="text-2xl font-extrabold mb-8 text-center tracking-wide" data-aos="fade-up" data-aos-delay="100">Bara SALL</h1>
+        <h1 class="text-2xl font-bold mb-8 text-center tracking-wide" data-aos="fade-up" data-aos-delay="100">Bara SALL</h1>
         
         <nav class="w-full px-6 flex flex-col space-y-3" data-aos="fade-up" data-aos-delay="200">
             <a href="#accueil" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-blue-900 hover:shadow-inner rounded-xl transition-all duration-300">
@@ -77,13 +73,13 @@
         </div>
     </header>
 
-    <main class="w-full md:ml-72 flex-1 relative">
+    <main class="w-full md:ml-72 flex-1">
         
         <section id="accueil" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white px-4 py-20 relative overflow-hidden">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 drop-shadow-xl" data-aos="fade-down" data-aos-duration="1200">Bara SALL</h1>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg" data-aos="fade-down" data-aos-duration="1200">Bara SALL</h1>
             
-            <p class="text-xl md:text-3xl text-blue-100 mb-10 max-w-2xl font-light tracking-wide" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-                Futur Ingénieur en Distribution Électrique & Énergies Renouvelables
+            <p class="text-xl md:text-3xl text-blue-100 mb-10 max-w-2xl font-light tracking-wide min-h-[40px] md:min-h-[50px]" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+                Futur Ingénieur en <span id="typing-text" class="font-bold text-white"></span>
             </p>
             
             <div class="flex flex-col sm:flex-row gap-6" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
@@ -91,12 +87,6 @@
                 <a href="cv.pdf" download="CV_Bara_SALL.pdf" class="bg-transparent border-2 border-white/50 hover:border-white hover:bg-white hover:text-blue-900 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
-            </div>
-
-            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="600" data-aos-anchor="#accueil">
-                <div class="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center p-1.5 shadow-inner backdrop-blur-sm">
-                    <div class="w-1.5 h-3 bg-white rounded-full animate-scroll"></div>
-                </div>
             </div>
         </section>
 
@@ -139,11 +129,11 @@
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-5 card-hover" data-aos="fade-up" data-aos-delay="500">
                         <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shrink-0"><i class="fas fa-microchip text-blue-600 text-2xl"></i></div>
-                        <span class="font-bold text-gray-700">Systèmes Embarqués (Arduino, ESP32)</span>
+                        <span class="font-bold text-gray-700">Arduino (C++) & Systèmes Embarqués</span>
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-5 card-hover" data-aos="fade-up" data-aos-delay="600">
                         <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shrink-0"><i class="fas fa-laptop-code text-blue-600 text-2xl"></i></div>
-                        <span class="font-bold text-gray-700">Logiciels (MATLAB, Schemaplic, VS Code)</span>
+                        <span class="font-bold text-gray-700">Logiciels (Schemaplic, MATLAB)</span>
                     </div>
                 </div>
             </div>
@@ -157,7 +147,7 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="bg-gray-50 rounded-2xl border border-gray-100 p-8 card-hover relative overflow-hidden group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="bg-gray-50 rounded-2xl border border-gray-100 p-8 card-hover relative overflow-hidden group" data-aos="fade-up">
                         <div class="absolute top-0 left-0 w-2 h-full bg-blue-600 transition-all duration-300 group-hover:w-3"></div>
                         <h3 class="text-2xl font-extrabold text-gray-800 mb-2 pl-4">Suiveur Solaire Intelligent</h3>
                         <p class="text-sm text-blue-600 font-bold mb-6 pl-4 uppercase tracking-wide">Projet de recherche & développement</p>
@@ -175,7 +165,6 @@
                         <ul class="list-none text-gray-600 space-y-3 pl-4">
                             <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> Installation de câblages industriels.</li>
                             <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> Diagnostic et dépannage d'équipements.</li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> Application stricte des protocoles de sécurité.</li>
                         </ul>
                     </div>
 
@@ -226,7 +215,7 @@
                                 <i class="fas fa-envelope text-2xl text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Email</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Email</h4>
                                 <p class="text-gray-500 mt-1 break-all">sallbaralamine@gmail.com</p>
                             </div>
                         </div>
@@ -235,7 +224,7 @@
                                 <i class="fas fa-phone text-2xl text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Téléphone</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Téléphone</h4>
                                 <p class="text-gray-500 mt-1">+221 77 325 11 36</p>
                             </div>
                         </div>
@@ -285,13 +274,31 @@
 
     </main>
 
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // Initialisation de AOS (Animations au défilement)
+        // Initialisation de AOS (Animate On Scroll)
         AOS.init({
-            once: true,
-            offset: 50,
+            once: true, /* L'animation ne se joue qu'une seule fois */
+            offset: 50, /* Déclenche l'animation un peu avant de voir l'élément */
+        });
+
+        // CONFIGURATION DE L'ANIMATION DE TEXTE (Typed.js)
+        var typed = new Typed('#typing-text', {
+            // Liste des mots ou phrases qui vont succéder
+            strings: [
+                'Distribution Électrique', 
+                'Énergies Renouvelables', 
+                'Optimisation Énergétique', 
+                'Systèmes Embarqués (Arduino/ESP)'
+            ],
+            typeSpeed: 60,       // Vitesse de frappe (en ms)
+            backSpeed: 30,       // Vitesse pour effacer (en ms)
+            backDelay: 2000,     // Temps de pause avant d'effacer le mot (en ms)
+            loop: true,          // Répéter l'animation à l'infini
+            cursorChar: '|',     // Caractère du curseur
         });
     </script>
 </body>
