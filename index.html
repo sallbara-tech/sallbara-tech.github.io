@@ -6,16 +6,36 @@
     <title>Bara SALL - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        
+        /* Animation du fond d'écran Premium */
         .hero-bg { 
-            background: linear-gradient(135deg, #1e3a8a, #111827); 
+            background: linear-gradient(-45deg, #0f172a, #1e3a8a, #040b14, #172554);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
-        /* Style pour la barre de défilement du menu */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Barre de menu */
         .sidebar::-webkit-scrollbar { width: 5px; }
         .sidebar::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
         
-        /* AJOUT : Animation de la petite souris */
+        /* Effet de survol sur les cartes (Premium) */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Animation de la petite souris */
         @keyframes scroll {
             0% { opacity: 1; }
             100% { opacity: 0; transform: translateY(12px); }
@@ -23,21 +43,22 @@
         .animate-scroll {
             animation: scroll 2s cubic-bezier(.15,.41,.69,.94) infinite;
         }
-        /* AJOUT : Couleur du curseur clignotant */
+
+        /* Curseur de l'animation de texte */
         .typed-cursor {
-            color: #d1d5db;
+            color: #d1d5db; /* Gris clair */
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row">
+<body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row overflow-x-hidden">
 
     <header class="sidebar w-full md:w-72 bg-[#040b14] text-white md:fixed md:top-0 md:left-0 md:h-screen flex flex-col items-center py-10 overflow-y-auto z-50 shadow-2xl">
-        <div class="mb-6 relative">
-            <img src="photo.jpg" alt="Bara SALL" class="w-32 h-32 rounded-full border-4 border-gray-700 object-cover shadow-lg bg-gray-800">
+        <div class="mb-6 relative" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="photo.jpg" alt="Bara SALL" class="w-32 h-32 rounded-full border-4 border-gray-700 object-cover shadow-lg bg-gray-800 transition transform hover:scale-105 duration-300">
         </div>
-        <h1 class="text-2xl font-bold mb-8 text-center">Bara SALL</h1>
+        <h1 class="text-2xl font-bold mb-8 text-center" data-aos="fade-up" data-aos-delay="100">Bara SALL</h1>
         
-        <nav class="w-full px-6 flex flex-col space-y-2">
+        <nav class="w-full px-6 flex flex-col space-y-2" data-aos="fade-up" data-aos-delay="200">
             <a href="#accueil" class="flex items-center space-x-4 p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
                 <i class="fas fa-home w-6 text-center"></i> <span>Accueil</span>
             </a>
@@ -55,7 +76,7 @@
             </a>
         </nav>
         
-        <div class="mt-8 md:mt-auto pt-8 flex space-x-4">
+        <div class="mt-8 md:mt-auto pt-8 flex space-x-4" data-aos="fade-up" data-aos-delay="300">
             <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-github"></i></a>
         </div>
@@ -64,20 +85,20 @@
     <main class="w-full md:ml-72 flex-1 relative">
         
         <section id="accueil" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white px-4 py-20 relative">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Bara SALL</h1>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg" data-aos="fade-down" data-aos-duration="1200">Bara SALL</h1>
             
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl min-h-[60px] md:min-h-[40px]">
-                Futur Ingénieur en <br class="block sm:hidden"><span id="typing-text" class="font-bold text-white"></span>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl min-h-[60px]" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+                <span id="typing-text"></span>
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#apropos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Découvrir mon profil</a>
-                <a href="cv.pdf" download="CV_Bara_SALL.pdf" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2">
+            <div class="flex flex-col sm:flex-row gap-4" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+                <a href="#apropos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Découvrir mon profil</a>
+                <a href="cv.pdf" download="CV_Bara_SALL.pdf" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
             </div>
 
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2" data-aos="fade-up" data-aos-delay="600">
                 <a href="#apropos" class="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center p-1.5 opacity-70 hover:opacity-100 transition-opacity">
                     <div class="w-1.5 h-3 bg-gray-400 rounded-full animate-scroll"></div>
                 </a>
@@ -85,35 +106,35 @@
         </section>
 
         <section id="apropos" class="py-20 bg-white">
-            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-8 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">À propos de moi</h2>
-                <div class="text-lg text-gray-600 leading-relaxed text-justify space-y-4">
+                <div class="text-lg text-gray-600 leading-relaxed text-justify space-y-4 bg-gray-50 p-6 rounded-xl shadow-sm card-hover">
                     <p>Actuellement en Licence 3 de Génie Électrique et Énergies Renouvelables à l'ESTM Dakar, je me passionne pour l'optimisation des systèmes énergétiques et la conception de solutions innovantes. Mon parcours académique me permet de maîtriser l'électronique de puissance, l'analyse des réseaux de distribution et la thermodynamique industrielle.</p>
                     <p>Au-delà de la théorie, je suis un maker dans l'âme. J'aime concevoir des systèmes embarqués concrets en alliant mécanique, électronique et programmation, tout en intégrant les nouvelles technologies pour rendre les systèmes énergétiques plus intelligents et autonomes.</p>
                 </div>
             </div>
         </section>
 
-        <section id="competences" class="py-20 bg-gray-50">
+        <section id="competences" class="py-20 bg-gray-50 border-y border-gray-200">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Domaines de Compétences</h2>
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2" data-aos="fade-right">Domaines de Compétences</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-solar-panel text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Énergie Solaire & Dimensionnement PV</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="200">
                         <i class="fas fa-chart-line text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Audit Énergétique</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-network-wired text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Systèmes Électriques & Réseaux</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-industry text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Informatique Industrielle & Automatisme</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="500">
                         <i class="fas fa-microchip text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Programmation C++ & Arduino</span>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-600 flex items-center space-x-4 card-hover" data-aos="fade-up" data-aos-delay="600">
                         <i class="fas fa-laptop-code text-blue-600 text-2xl"></i><span class="font-semibold text-gray-700">Logiciels (Schemaplic, MATLAB, Zeliosoft)</span>
                     </div>
                 </div>
@@ -122,23 +143,23 @@
 
         <section id="projets" class="py-20 bg-white">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Expériences & Projets Pratiques</h2>
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2" data-aos="fade-right">Expériences & Projets Pratiques</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+                    <div class="bg-gray-50 rounded-lg shadow-md border-l-4 border-blue-600 card-hover relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Suiveur Solaire Intelligent</h3>
                             <p class="text-sm text-blue-600 font-semibold mb-4">Projet de recherche & développement</p>
                             <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
                                 <li>Création d'un prototype de tracker solaire à un axe.</li>
                                 <li>Assemblage mécanique et pilotage par moteur NEMA 23.</li>
-                                <li>Programmation Arduino pour l'exploitation des capteurs et contrôle d'accès RFID.</li>
+                                <li>Programmation Arduino pour capteurs et contrôle d'accès RFID.</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+                    <div class="bg-gray-50 rounded-lg shadow-md border-l-4 border-blue-600 card-hover relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Stage Technicien Électrique</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">CENOA, Dakar | Août 2024 - Septembre 2024</p>
+                            <p class="text-sm text-blue-600 font-semibold mb-4">CENOA, Dakar | Août 2024 - Sept. 2024</p>
                             <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
                                 <li>Installation de câblages à travers des conduits industriels.</li>
                                 <li>Diagnostic et dépannage d'équipements défectueux.</li>
@@ -146,7 +167,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+                    <div class="bg-gray-50 rounded-lg shadow-md border-l-4 border-blue-600 card-hover relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Électronique Analogique</h3>
                             <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM Dakar</p>
@@ -156,7 +177,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+                    <div class="bg-gray-50 rounded-lg shadow-md border-l-4 border-blue-600 card-hover relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Électricité Industrielle</h3>
                             <p class="text-sm text-blue-600 font-semibold mb-4">Laboratoire ESTM Dakar</p>
@@ -172,12 +193,12 @@
 
         <section id="contact" class="py-20 bg-gray-100">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2">Me Contacter</h2>
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-wider text-blue-900 border-b-4 border-blue-500 inline-block pb-2" data-aos="fade-right">Me Contacter</h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600">
+                    <div class="space-y-6" data-aos="fade-up">
+                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600 card-hover">
                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
                                 <i class="fas fa-map-marker-alt text-xl text-blue-600"></i>
                             </div>
@@ -186,7 +207,7 @@
                                 <p class="text-gray-600 text-sm">Poste Thiaroye, Dakar, Sénégal</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600">
+                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600 card-hover">
                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
                                 <i class="fas fa-envelope text-xl text-blue-600"></i>
                             </div>
@@ -195,7 +216,7 @@
                                 <p class="text-gray-600 text-sm break-all">sallbaralamine@gmail.com</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600">
+                        <div class="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4 border-l-4 border-blue-600 card-hover">
                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
                                 <i class="fas fa-phone text-xl text-blue-600"></i>
                             </div>
@@ -206,11 +227,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-600">
+                    <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-600" data-aos="fade-up" data-aos-delay="200">
                         <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
                             
                             <input type="hidden" name="access_key" value="1ce6f0f1-b2dd-470c-8ace-482f638d8662">
-                            
                             <input type="hidden" name="subject" value="Nouveau message de votre Portfolio">
                             <input type="hidden" name="from_name" value="Bara SALL Portfolio">
 
@@ -247,20 +267,24 @@
 
     </main>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
     <script>
+        // Initialisation de l'apparition au défilement
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+
+        // Initialisation du texte progressif (S'écrit une seule fois)
         var typed = new Typed('#typing-text', {
-            strings: [
-                'Distribution Électrique',
-                'Énergies Renouvelables',
-                'Informatique Industrielle',
-                'Systèmes Embarqués'
-            ],
-            typeSpeed: 60,       /* Vitesse d'écriture */
-            backSpeed: 40,       /* Vitesse d'effacement */
-            backDelay: 2000,     /* Temps de pause (2s) */
-            loop: true,          /* Boucle infinie */
-            cursorChar: '|',     /* Le fameux curseur ! */
+            strings: ['Futur Ingénieur en Distribution Électrique &amp; Énergies Renouvelables'],
+            typeSpeed: 40,       // Vitesse de frappe (pas trop lent)
+            showCursor: true,    // Affiche le curseur
+            cursorChar: '|',     // Forme du curseur
+            loop: false          // NE BOUCLE PAS : s'arrête à la fin de la phrase !
         });
     </script>
 </body>
