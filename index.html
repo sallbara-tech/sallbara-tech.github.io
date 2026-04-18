@@ -14,6 +14,19 @@
         /* Style pour la barre de défilement du menu */
         .sidebar::-webkit-scrollbar { width: 5px; }
         .sidebar::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+        
+        /* AJOUT : Animation de la petite souris */
+        @keyframes scroll {
+            0% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(12px); }
+        }
+        .animate-scroll {
+            animation: scroll 2s cubic-bezier(.15,.41,.69,.94) infinite;
+        }
+        /* AJOUT : Couleur du curseur clignotant */
+        .typed-cursor {
+            color: #d1d5db;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row">
@@ -48,15 +61,25 @@
         </div>
     </header>
 
-    <main class="w-full md:ml-72 flex-1">
+    <main class="w-full md:ml-72 flex-1 relative">
         
-        <section id="accueil" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white px-4 py-20">
+        <section id="accueil" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white px-4 py-20 relative">
             <h1 class="text-5xl md:text-7xl font-bold mb-4">Bara SALL</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">Futur Ingénieur en Distribution Électrique & Énergies Renouvelables</p>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl min-h-[60px] md:min-h-[40px]">
+                Futur Ingénieur en <br class="block sm:hidden"><span id="typing-text" class="font-bold text-white"></span>
+            </p>
+            
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#apropos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Découvrir mon profil</a>
                 <a href="cv.pdf" download="CV_Bara_SALL.pdf" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-download"></i> Télécharger mon CV
+                </a>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <a href="#apropos" class="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center p-1.5 opacity-70 hover:opacity-100 transition-opacity">
+                    <div class="w-1.5 h-3 bg-gray-400 rounded-full animate-scroll"></div>
                 </a>
             </div>
         </section>
@@ -223,5 +246,22 @@
         </footer>
 
     </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typing-text', {
+            strings: [
+                'Distribution Électrique',
+                'Énergies Renouvelables',
+                'Informatique Industrielle',
+                'Systèmes Embarqués'
+            ],
+            typeSpeed: 60,       /* Vitesse d'écriture */
+            backSpeed: 40,       /* Vitesse d'effacement */
+            backDelay: 2000,     /* Temps de pause (2s) */
+            loop: true,          /* Boucle infinie */
+            cursorChar: '|',     /* Le fameux curseur ! */
+        });
+    </script>
 </body>
 </html>
